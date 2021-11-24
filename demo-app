@@ -1,0 +1,61 @@
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View, TextInput, Button, Image } from "react-native";
+
+export default function App() {
+  // All Functions
+  var textInputValue = "This is what you would like to get out of the course..."; // String variable
+  const handlePress = () => console.log(textInputValue); // const arrow function
+  const handleChangeText = () => console.log(textInputValue); // const arrow function
+
+  return (
+    <View style={main.container}>
+      
+      <View style={{backgroundColor: "lightblue", paddingVertical: '15px', marginVertical: '0px'}}>
+      <Text style={main.bigText}>Hello World!</Text>
+      <Text style={main.secondBigText}>First React Native App</Text>
+      <Text>This is a paragraph explaining what this app is all about. As you can see there are already many components including text, images and buttons.</Text>
+      </View>
+
+      <View style= {{height: '30%', paddingVertical: '10px'}}>
+      <Text style={{fontWeight: "bold"}}>What would you like to get out of this course?</Text>
+      <TextInput placeholder="Initial Text" onChangeText={handleChangeText} />     
+      </View>
+     
+
+      <View>
+      <Text style={{fontWeight: "bold"}}>An emoji describing how you are feeling about the course:</Text>
+      <Image
+        style={{ width: 100, height: 100 }}
+        source={require("./assets/icon.png")}/>
+      </View>
+     
+
+      <StatusBar style="auto" />
+
+    
+      <Button title="Submit" onPress={handlePress} />
+    </View>
+  );
+}
+
+const main = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "left",
+    justifyContent: "left",
+    margin: "50",
+    padding: "20px",
+  },
+  bigText: {
+    fontSize: "4rem",
+    fontWeight: "bold",
+  },
+  secondBigText: {
+    fontSize: "2rem",
+  }
+
+
+
+});
